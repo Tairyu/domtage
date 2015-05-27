@@ -3,7 +3,8 @@ var babel = require('babel');
 module.exports = function (wallaby) {
   return {
     files: [
-      "lib/**/*.js"
+      "lib/**/*.js",
+      "domtage.js"
     ],
     tests: [
       "test/**/*Spec.js"

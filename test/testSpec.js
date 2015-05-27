@@ -1,6 +1,7 @@
 'use strict';
 
 var assert = require('power-assert');
+var _ = require('lazy.js');
 var fs = require('fs-extra');
 var is = require('predicates');
 var YAML = require('js-yaml');
@@ -19,12 +20,18 @@ describe('Domtage:', function(){
 
     before(function(){
       recipe = YAML.safeLoad(fs.readFileSync('single.yml'));
-      target = new Domtage(null, recipe);
+      target = new Domtage({destDir: 'dest/single', ext: '.html'}, recipe);
+      console.log(target.opts);
     });
 
     it('opts', function(){
       assert(is.plainObject(target.opts));
-      assert.deepEqual(target.opts, Domtage.defaultOpts());
+      assert.deepEqual(target.opts, {
+        srcDir: 'src/',
+        destDir: 'dest/single',
+        encode: 'utf-8',
+        ext: '.html'
+      });
     });
     it('layout', function(){
       assert.deepEqual(target.layouts, recipe.layouts);
@@ -33,7 +40,7 @@ describe('Domtage:', function(){
       assert.equal(target.src.html(), fs.readFileSync('src/single.html'));
     });
     it('dest', function(){
-      assert((is.eq('dest/single.html')(target.dest)));
+      assert((is.eq('dest/single/single.html')(target.dest)));
     });
     it('#generate()', function(){
       target.generate();

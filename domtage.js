@@ -52,7 +52,7 @@ var Domtage = (function () {
       };
     } else {
 
-      this.opts = (0, _lazyJs2['default'])(options || {}).assign(OPTIONS).value();
+      this.opts = (0, _lazyJs2['default'])(OPTIONS).assign(options || {}).value();
       this.skipGen = _predicates2['default']['true'](recipe.skipGen);
       this.layoutDir = _predicates2['default']['true'](recipe.cwd) ? _path2['default'].join(this.opts.srcDir, _path2['default'].dirname(recipe.name)) : this.opts.srcDir;
       this.layouts = _predicates2['default'].arr(recipe.layouts) ? recipe.layouts : [];
