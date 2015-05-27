@@ -16,9 +16,11 @@
     "js-yaml": "3.3.1",
     "mocha": "2.2.5",
     "npm-run-all": "1.2.5",
-    "power-assert": "0.11.0"
+    "power-assert": "0.11.0",
+    "rimraf": "2.3.4"
   },
   "files": [
+    "lib",
     "domtage.js",
     "LICENSE",
     "README.md"
@@ -30,6 +32,9 @@
     "build": "babel lib/domtage.js -o domtage.js --source-maps-inline",
     "fixpack": "fixpack",
     "mocha": "mocha --compilers js:espower-babel/guess test/**/*.js",
-    "test": "npm-run-all mocha build fixpack"
+    "module:install": "npm i",
+    "module:rimraf": "rimraf node_modules",
+    "rimraf:modules": "rimraf node_modules",
+    "test": "npm-run-all module:rimraf module:install mocha build fixpack"
   }
 }
