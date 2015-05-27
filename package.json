@@ -25,9 +25,14 @@
     "LICENSE",
     "README.md"
   ],
+  "homepage": "https://github.com/Tairyu/domtage",
   "license": "MIT",
   "main": "domtage.js",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tairyu/domtage.git"
+  },
   "scripts": {
     "build": "babel lib/domtage.js -o domtage.js --source-maps-inline",
     "fixpack": "fixpack",
