@@ -1,0 +1,11 @@
+name: cwdTest/base
+skipGen: true
+cwd: true
+layouts:
+  - title: layouts/title
+  - "#content": layouts/body/main-contents
+patterns:
+  - name: cwdTest/index
+    cwd: true
+    layouts:
+      - .main-menu: layouts/body/main-menu

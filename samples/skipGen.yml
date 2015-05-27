@@ -1,0 +1,18 @@
+name: skip
+skipGen: true
+layouts:
+  - header: header/default
+  - div.nothing: nothing
+  - footer: footer/default
+  - "#content": index/content
+  - ul.side-panel: index/side-panel
+patterns:
+  - name: skip_build
+    layouts:
+      - .sign-in: header/sign-up
+  - name: no_generate
+    skipGen: true
+    layouts:
+      - title: detail/title
+    patterns:
+      - name: skip_build2

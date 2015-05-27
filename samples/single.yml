@@ -1,0 +1,12 @@
+name: single
+layouts:
+  - header: header/default
+  - div.nothing: nothing
+  - footer: footer/default
+  - "#content": index/content
+  - ul.side-panel: index/side-panel
+patterns:
+  - name: single2
+    layouts:
+      - .sign-in: header/sign-up
+  - name: single2/noreplace

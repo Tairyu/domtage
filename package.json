@@ -1,0 +1,35 @@
+{
+  "name": "domtage",
+  "description": "static html-file generator",
+  "version": "0.1.0",
+  "dependencies": {
+    "cheerio": "0.19.0",
+    "fs-extra": "0.18.4",
+    "lazy.js": "0.4.0",
+    "predicates": "1.0.1"
+  },
+  "devDependencies": {
+    "babel": "5.4.7",
+    "espower-babel": "3.1.1",
+    "fixpack": "2.2.0",
+    "intelli-espower-loader": "0.7.0",
+    "js-yaml": "3.3.1",
+    "mocha": "2.2.5",
+    "npm-run-all": "1.2.5",
+    "power-assert": "0.11.0"
+  },
+  "files": [
+    "domtage.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "main": "domtage.js",
+  "private": true,
+  "scripts": {
+    "build": "babel lib/domtage.js -o domtage.js --source-maps-inline",
+    "fixpack": "fixpack",
+    "mocha": "mocha --compilers js:espower-babel/guess test/**/*.js",
+    "test": "npm-run-all mocha build fixpack"
+  }
+}
